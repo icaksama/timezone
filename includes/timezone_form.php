@@ -11,7 +11,7 @@
         <form method="POST" action="">
             <label>
                 <b>From</b>
-                <input type="datetime-local" name="date_from">
+                <input type="datetime-local" name="date_from" value="2020-05-05T12:00">
                 <select name="from">
                     <?php
                         while($row = $query->fetch_assoc()) {
