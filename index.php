@@ -4,7 +4,7 @@ include_once './includes/url_validator.php';
 // Create connection
 $mysqli = new mysqli(
     "127.0.0.1", 
-    "root", 
+    "dev", 
     "{devpass123}", 
     "timezonedb"
 );
