@@ -26,6 +26,7 @@ if ($mysqli->connect_error) {
         <form method="POST" action="">
             <label>
                 <b>From</b>
+                <input type="datetime-local" name="date_from">
                 <select name="from">
                     <?php
                         while($row = $query->fetch_assoc()) {
@@ -64,7 +65,7 @@ if ($mysqli->connect_error) {
                 // $date = new DateTime(date("Y-m-d H:i:s"), new DateTimeZone($_POST['to'])); // USER's timezone
                 // $date->setTimezone(new DateTimeZone('UTC'));
                 // echo $date->format('Y-m-d H:i:s');
-                $date = new DateTime(date("Y-m-d H:i:sP"), new DateTimeZone($_POST['from']));
+                $date = new DateTime($_POST['date_from'], new DateTimeZone($_POST['from']));
                 echo "<p>From ".$_POST['from'].": <b>".$date->format('Y-m-d H:i:sP') . "</b></p>";
                 $date->setTimezone(new DateTimeZone($_POST['to']));
                 echo "<p>To ".$_POST['to'].": <b>".$date->format('Y-m-d H:i:sP') . "</b></p>";
